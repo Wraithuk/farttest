@@ -1,8 +1,7 @@
 local InputService = game:GetService('UserInputService');
 local TextService = game:GetService('TextService');
-local CoreGui = gethui()
-local Teams = game:GetService('Teams');
 local Players = game:GetService('Players');
+local Teams = game:GetService('Teams');
 local RunService = game:GetService('RunService')
 local TweenService = game:GetService('TweenService');
 local RenderStepped = RunService.RenderStepped;
@@ -10,12 +9,12 @@ local LocalPlayer = Players.LocalPlayer;
 local Mouse = LocalPlayer:GetMouse();
 
 local ProtectGui = (function() end);
-
 local ScreenGui = Instance.new('ScreenGui');
+ScreenGui.Parent = LocalPlayer:WaitForChild('PlayerGui'); 
+
 ProtectGui(ScreenGui);
 
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Global;
-ScreenGui.Parent = StarterGui;
 
 local Toggles = {};
 local Options = {};
